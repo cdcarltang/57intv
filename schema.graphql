@@ -1,0 +1,13 @@
+type LiquidityDeposited @entity {
+  id: ID!
+  sender: Bytes!
+  assets: BigInt!
+  shares: BigInt!
+  timestamp: BigInt!
+}
+
+type TotalLiquidityDeposited @entity {
+  id: ID!
+  totalAmount: BigInt!
+}
+

@@ -1,0 +1,17 @@
+specVersion: 0.0.2
+description: Gravatar for Ethereum
+repository: https://github.com/carltang/57intv
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: TrancheVault
+    network: celo
+    source:
+      address: "0xf26a071833032ce57769fdf530e81a28f15671df"
+      abi: TrancheVault
+    mapping:
+      eventHandlers:
+        - event: LiquidityDeposited(address,uint256,uint256)
+          handler: handleLiquidityDeposited
+      file: ./src/mappings/LiquidityDeposited.ts
